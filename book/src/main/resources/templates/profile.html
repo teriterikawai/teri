@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h5>Имя: </h5>
+    <p th:text="${user.getName()}"></p>
+    <h5>Фамилия: </h5>
+    <p th:text="${user.getSurname()}"></p>
+    <h5>Отчество: </h5>
+    <p th:text="${user.getLastname()}"></p><br>
+
+    <h5>Телефон: </h5>
+    <p th:text="${user.getLastname()}"></p>
+    <h5>Отчество: </h5>
+    <p th:text="${user.getLastname()}"></p><br>
+
+    <h5>Логин: </h5>
+    <p th:text="${user.getUsername()}"></p>
+    <h5>Роль:</h5>
+    <p th:each="roles : ${user.getRoles()}" th:text="${roles.name}"></p>
+</div>
+<div>
+    <h5><a th:href="@{/}">Назад</a></h5><br>
+
+    <form method="post" th:action="@{/logout}">
+        <input type="submit" value="Выйти">
+    </form>
+</div>
+</body>
+</html>

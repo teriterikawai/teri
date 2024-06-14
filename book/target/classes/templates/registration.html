@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2>Регистрация</h2>
+    <h5>Есть аккаунт? <a th:href="@{/login}">Авторизоваться</a></h5>
+
+    <form method="post" th:action="@{/registration}" id="registration">
+        <label for="name">Имя</label>
+        <input type="text" name="name" id="name"><br>
+        <label for="surname">Фамилия</label>
+        <input type="text" name="surname" id="surname"><br>
+        <label for="lastname">Отчество</label>
+        <input type="text" name="lastname" id="lastname"><br>
+
+        <label for="phone">Телефон</label>
+        <input type="text" name="phone" id="phone"><br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email"><br>
+
+        <label for="username">Логин</label>
+        <input type="text" name="username" id="username"><br>
+        <label for="password">Пароль</label>
+        <input type="password" name="password" id="password"><br>
+
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+</div>
+</body>
+</html>
